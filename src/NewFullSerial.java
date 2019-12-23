@@ -1,10 +1,11 @@
-public class NewSerial extends SerialBuilder {
+// Билдер для полного заполения всех полей сериала (если всё точно изветсно, например)
+public class NewFullSerial extends SerialBuilder {
     private String title;
     private int seasons;
     private int series;
     private int year;
 
-    public NewSerial(String title, int seasons, int series, int year) {
+    public NewFullSerial(String title, int seasons, int series, int year) {
         this.title = title;
         this.seasons = seasons;
         this.series = series;

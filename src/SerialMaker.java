@@ -13,6 +13,15 @@ public class SerialMaker {
         return serialBuilder;
     }
 
+    public void addSerial() {
+        serialBuilder.addNewSerial()
+                .addTitle()
+                .addSeasons()
+                .addSeries()
+                .addYear();
+    }
+
+    // Метод сразу возвращающий сериал. Вдруг понадобится.
     public Serial makeAndAddNewSerial() {
         return serialBuilder.addNewSerial()
                 .addTitle()

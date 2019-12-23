@@ -1,3 +1,4 @@
+//Дефолтный билдер для сериала. Вряд ли такой понадобится, но пусть будет.
 public class DefaultSerial extends SerialBuilder{
     public SerialBuilder addTitle() {
         serial.setTitle("Название");

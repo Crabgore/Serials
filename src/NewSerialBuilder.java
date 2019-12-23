@@ -1,3 +1,4 @@
+// Билдер для добавления нового сериала с любыми необходимыми или имеющимися параметрами (универсальный)
 public class NewSerialBuilder extends SerialBuilder {
     @Override
     public SerialBuilder addTitle() {
@@ -19,24 +20,20 @@ public class NewSerialBuilder extends SerialBuilder {
         return this;
     }
 
-    public SerialBuilder addTitle(String title) {
-        getSerial().setTitle(title);
-        return null;
+    public void addTitle(String title) {
+        serial.setTitle(title);
     }
 
-    public SerialBuilder addSeasons(int seasons) {
+    public void addSeasons(int seasons) {
         serial.setSeasons(seasons);
-        return null;
     }
 
-    public SerialBuilder addSeries(int series) {
+    public void addSeries(int series) {
         serial.setSeries(series);
-        return null;
     }
 
-    public SerialBuilder addYear(int year) {
+    public void addYear(int year) {
         serial.setYear(year);
-        return null;
     }
 
 }

@@ -1,3 +1,4 @@
+// Сам класс сериала с необходимыми полями и сеттерами
 public class Serial {
     private String title;
     private int seasons;

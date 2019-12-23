@@ -1,3 +1,4 @@
+// Билдер со всеми необходимыми абстрактными методами
 public abstract class SerialBuilder {
     protected Serial serial;
 

@@ -5,22 +5,22 @@ public class Main {
 //        SerialBuilder serialBuilder = new DefaultSerial();
 //
 //        maker.setSerialBuilder(serialBuilder);
-//        maker.makeAndAddNewSerial();
+//        maker.addSerial();
 //
 //        System.out.println(maker.toString());
 
 //        SerialMaker maker = new SerialMaker();
-//        SerialBuilder serialBuilder = new NewSerial("Название", 3, 24, 2019);
+//        SerialBuilder serialBuilder = new NewFullSerial("Название", 3, 24, 2019);
 //
 //        maker.setSerialBuilder(serialBuilder);
-//        maker.makeAndAddNewSerial();
+//        maker.addSerial();
 //
 //        System.out.println(maker.toString());
 
         NewSerialBuilder serialBuilder = new NewSerialBuilder();
 
         maker.setSerialBuilder(serialBuilder);
-        maker.makeAndAddNewSerial();
+        maker.addSerial();
 
         serialBuilder.addTitle("Название");
         serialBuilder.addSeasons(1);
