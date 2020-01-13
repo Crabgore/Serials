@@ -5,6 +5,16 @@ public class Serial {
     private int series;
     private int year;
 
+    public Serial(String title, int seasons, int series, int year) {
+        this.title = title;
+        this.seasons = seasons;
+        this.series = series;
+        this.year = year;
+    }
+
+    public Serial() {
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
