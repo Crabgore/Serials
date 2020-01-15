@@ -1,22 +1,24 @@
 public class Facade {
     private SerialMaker maker = new SerialMaker();
 
-    public String makeDefaultSerial() {
+    private SerialOperationExecutor serialOperationExecutor = new SerialOperationExecutor();
+
+    public Serial makeDefaultSerial() {
         SerialBuilder serialBuilder = new DefaultSerial();
 
         maker.setSerialBuilder(serialBuilder);
         maker.addSerial();
 
-        return maker.toString();
+        return maker.getSerial();
     }
 
-    public String makeFullSerial(String title, int seasons, int series, int year) {
+    public Serial makeFullSerial(String title, int seasons, int series, int year) {
         maker.addFullSerial(title, seasons, series, year);
 
-        return maker.toString();
+        return maker.getSerial();
     }
 
-    public String makeNewSerial(String title, int...ints) {
+    public Serial makeNewSerial(String title, int...ints) {
         NewSerialBuilder serialBuilder = new NewSerialBuilder();
 
         maker.setSerialBuilder(serialBuilder);
@@ -27,6 +29,30 @@ public class Facade {
         if (ints.length>1) serialBuilder.addSeries(ints[1]);
         if (ints.length>2) serialBuilder.addSeries(ints[2]);
 
-        return maker.toString();
+        return maker.getSerial();
+    }
+
+    public String saveDefaultSerial() {
+        return serialOperationExecutor.executeOperation(new SaveSerialOperation(makeDefaultSerial()));
+    }
+
+    public String saveFullSerial(String title, int seasons, int series, int year) {
+        return serialOperationExecutor.executeOperation(new SaveSerialOperation(makeFullSerial(title, seasons, series, year)));
+    }
+
+    public String saveNewSerial(String title, int...ints) {
+        return serialOperationExecutor.executeOperation(new SaveSerialOperation(makeNewSerial(title, ints)));
+    }
+
+    public String deleteDefaultSerial() {
+        return serialOperationExecutor.executeOperation(new DeleteSerialOperation(makeDefaultSerial()));
+    }
+
+    public String deleteFullSerial(String title, int seasons, int series, int year) {
+        return serialOperationExecutor.executeOperation(new DeleteSerialOperation(makeFullSerial(title, seasons, series, year)));
+    }
+
+    public String deleteNewSerial(String title, int...ints) {
+        return serialOperationExecutor.executeOperation(new DeleteSerialOperation(makeNewSerial(title, ints)));
     }
 }

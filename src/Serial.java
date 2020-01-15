@@ -15,6 +15,14 @@ public class Serial {
     public Serial() {
     }
 
+    public String save() {
+        return "Сериал "  + '"' + title + '"' +" сохранён";
+    }
+
+    public String delete() {
+        return "Сериал " + '"' + title + '"' + " удалён";
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
